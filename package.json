@@ -1,0 +1,21 @@
+{
+    "name": "ssg",
+    "version": "1.0.0",
+    "description": "static site generating using javascript and markdown files",
+    "main": "generator.js",
+    "dependencies": {
+        "highlight.js": "^11.5.1",
+        "markdown-it": "^13.0.1",
+        "glob": "^7.1.6",
+        "gray-matter": "^4.0.2",
+        "mkdirp": "^1.0.4"
+    },
+
+    "type": "module",
+    "scripts": {
+        "devgenerate": "nodemon -e js,md,html --ignore dist/ ./generator.js",
+        "generate": "node ./generator.js"
+    },
+    "author": "Anubhab Patnaik",
+    "license": "ISC"
+}
