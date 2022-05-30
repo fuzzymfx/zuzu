@@ -5,6 +5,11 @@ import mkdirp from 'mkdirp'
 import path from 'path'
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it'
+import markdownItAnchor from 'markdown-it-anchor'
+import string from 'string'
+
+const slugify = s => string(s).slugify().toString()
+
 
 const md = MarkdownIt({
     html: true,
@@ -22,7 +27,7 @@ const md = MarkdownIt({
 
         return null;
     }
-});
+}).use(markdownItAnchor, { slugify });
 
 
 const readFile = (filename) => {
