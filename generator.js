@@ -75,7 +75,7 @@ const processFile = (filename, template, outPath) => {
 
 const main = () => {
     const srcPath = path.resolve('pages')
-    const outPath = path.resolve('dist')
+    const outPath = path.resolve('public')
     const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
 
