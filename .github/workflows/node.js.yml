@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.x]
-
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -35,4 +34,3 @@ jobs:
     - run: git add .
     - run: git commit -m "Deploying update"
     - run: git push origin squbix-resume
-
