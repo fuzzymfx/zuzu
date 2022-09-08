@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "squbix-resume" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "squbix-resume" ]
+    branches: [ "master" ]
 
 jobs:
   build:
