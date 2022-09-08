@@ -6,9 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shitpost.IN</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/hljs.css">
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="description" content="Random shitpost on my daily drivers, chill outs & research thingys." />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <title>Squbix Digital Pvt. Ltd.</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./hljs.css">
 
     <style>
         .md {
@@ -17,23 +26,73 @@
             margin-right: 10px;
             margin-left: 10px;
         }
+        
+        .auth {
+            font-style: italic;
+        }
+        
+        .dt {
+            font-size: 20px;
+        }
+        
+        .nav {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-left: 10px;
+            padding: 10px;
+            padding-right: 20px;
+            margin-right: 10px;
+        }
+        
+        span+span {
+            margin-left: 10px;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
 <body class="markdown-body">
-    <div class="md">
-        <div>
-            <h1>
-                Static Site Generator (SSG)
-            </h1>
-            <p>
-                May 29, 2022
-            </p>
-            <p>
-                Anubhab Patnaik
-            </p>
+    <div class="main">
+        <div class="container nav">
+            <div class="row flex">
+                <div class="col-md-12">
+                    <div>
+                        <span>
+                            <a href="https://squbix.com">Home</a>
+                        </span>
+
+
+                    </div>
+                </div>
+                <div>
+                    <a href="mailto:hr@squbix.com">Contact Us</a>
+                </div>
+            </div>
         </div>
-        <pre><code class="language-js"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;fs&#x27;</span>
+        <div>
+            <h3 style="font-size: 70px; padding-left: 10px;">
+                Squbix Digital
+            </h3>
+        </div>
+        <div class="md">
+            <div class="head">
+                <h1>
+                    Static Site Generator (SSG)
+                </h1>
+                <p class="dt">
+                    May 29, 2022
+                </p>
+            </div>
+            <div>
+                <p class='auth'>
+
+                    Anubhab Patnaik
+                </p>
+                <pre><code class="language-js"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;fs&#x27;</span>
 <span class="hljs-keyword">import</span> glob <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;glob&#x27;</span>
 <span class="hljs-keyword">import</span> matter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;gray-matter&#x27;</span>
 <span class="hljs-keyword">import</span> marked <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;marked&#x27;</span>
@@ -95,9 +154,12 @@
 <span class="hljs-title function_">main</span>()
 </code></pre>
 
+            </div>
+        </div>
+
+
+
     </div>
-
-
 </body>
 
 </html>

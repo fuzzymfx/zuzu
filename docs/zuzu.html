@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="description" content="Random shitpost on my daily drivers, chill outs & research thingys." />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <title>Squbix Digital Pvt. Ltd.</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./hljs.css">
+
+    <style>
+        .md {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        
+        .auth {
+            font-style: italic;
+        }
+        
+        .dt {
+            font-size: 20px;
+        }
+        
+        .nav {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-left: 10px;
+            padding: 10px;
+            padding-right: 20px;
+            margin-right: 10px;
+        }
+        
+        span+span {
+            margin-left: 10px;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <div class="main">
+        <div class="container nav">
+            <div class="row flex">
+                <div class="col-md-12">
+                    <div>
+                        <span>
+                            <a href="https://squbix.com">Home</a>
+                        </span>
+
+
+                    </div>
+                </div>
+                <div>
+                    <a href="mailto:hr@squbix.com">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-size: 70px; padding-left: 10px;">
+                Squbix Digital
+            </h3>
+        </div>
+        <div class="md">
+            <div class="head">
+                <h1>
+                        zuzu: A Static Site Generator (SSG)  
+                </h1>
+                <p class="dt">
+                    May 29, 2022
+                </p>
+            </div>
+            <div>
+                <p class='auth'>
+
+                    Anubhab Patnaik
+                </p>
+                <p>Zuzu is a static site generator that takes in markdown files and render htmls pages. <a href="https://anubhavp.me/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.</p>
+<ul>
+<li><a href="#how-does-it-work">How Does it work</a>
+<ul>
+<li><a href="#1-create-a-markdown-file">Create a markdown file.</a></li>
+<li><a href="#2-run-the-generator-and-find-your-blog">Run the generator and find your blog.</a></li>
+</ul>
+</li>
+<li><a href="#the-static-site-generator">The Static Site Generator</a>
+<ul>
+<li><a href="#1-libraries-used">Libraries Used</a></li>
+<li><a href="#2-workflow">Workflow</a></li>
+<li><a href="#3-generator-code">Generator Code.</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="how-does-it-work" tabindex="-1">How does it work?</h2>
+<p>Zuzu parses the markdown file using <em>javascript</em> and renders it as <em>html documents</em>. It then saves the html files in the <code>public</code> folder. The public folder, with <code>index.html</code> file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on <a href="https://anubhavp.me/blog/">Github Pages</a>.</p>
+<h3 id="1-create-a-markdown-file" tabindex="-1">1. Create a markdown file</h3>
+<pre><code># This is a title
+This is a paragraph
+This is another paragraph
+This is a list:
+* Item 1
+* Item 2
+* Item 3
+This is a code block:
+```
+print(&quot;Hello World&quot;)
+```
+This is a table:
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| 1        | 2        | 3        |
+| 4        | 5        | 6        |
+| 7        | 8        | 9        |
+This is a link: [zuzu](https://anubhavp.me/blog/zuzu.html)
+</code></pre>
+<h3 id="2-run-the-generator-and-find-your-blog" tabindex="-1">2. Run the generator and find your blog</h3>
+<p>Run <code>npm run generate</code> in the console.
+You’ll now see the blog in the public folder! Run the index.html file in your browser to see your blog. You may now deploy your site
+to a server.</p>
+<h2 id="the-static-site-generator" tabindex="-1">The Static Site Generator</h2>
+<h3 id="1-libraries-used" tabindex="-1">1. Libraries used</h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/markdown-it">MarkdownIt</a> <em>Markdown parser done right.</em></li>
+<li><a href="https://www.npmjs.com/package/markdown-it-anchor">MarkdownItAnchor</a> <em>Header anchors for markdown-it.</em></li>
+<li><a href="https://www.npmjs.com/package/glob">Glob</a> <em>“Globs” are the patterns you type when you do stuff like ls .js on the command line, or put build/ in a .gitignore file.</em></li>
+<li><a href="https://www.npmjs.com/package/gray-matter">Gray-Matter</a> <em>Parse front-matter from a string or file.</em></li>
+<li><a href="https://npmjs.com/package/mkdirp">Mkdirp</a> <em>Create Dirs if they do not exist.</em></li>
+</ul>
+<h3 id="2-workflow" tabindex="-1">2. Workflow</h3>
+<p>This is the code for the generator.js.
+The code works in the following way:</p>
+<ol>
+<li><code>fs.readfile() from fs</code> reads all the files from the said directory and stores then in <code>filename</code> using <code>glob</code>. It is a <code>glob</code> that matches all the files in the directory. The <code>file system</code> module allows you to work with the file system on your computer.</li>
+<li><code>gray-matter</code> helps extracting front matter from the a string or file.
+Converts a string with front-matter, like this:</li>
+</ol>
+<pre><code>    title: Hello
+    slug: home
+    ---
+    &lt;h1&gt;Hello world!&lt;/h1&gt;
+</code></pre>
+<p>Into an object like this:</p>
+<pre><code>{
+content: '&lt;h1&gt;Hello world!&lt;/h1&gt;',
+data: { 
+    title: 'Hello', 
+    slug: 'home' 
+}
+}
+</code></pre>
+<p>It then extracts the front matter and stores it in <code>data</code>. It then stores the content in <code>content</code> and returns the <code>filename</code> to the <code>main()</code> function. It then repeats the process for all the files in the directory.</p>
+<ol start="3">
+<li>
+<p>The <code>main()</code> function then takes in one <code>filename</code> at a time and then parses it through <code>markdownit( ,{markdownitanchor})</code>. <code>markdownit</code> parses the file and converts the markdown content into HTML files. It then creates a <code>html</code> file and writes the parsed content into it. It then saves the <code>html</code> file in the <code>public</code> folder. This process repeats for all the files in the directory.</p>
+</li>
+<li>
+<p>The converted html files are stored in the specified directories then using <code>mkdirp</code>. The <code>index.html</code> file isalready present in the <code>public</code> folder. <code>mkdirp</code> creates the directories if they do not exist.</p>
+</li>
+</ol>
+<h3 id="3-generator-code" tabindex="-1">3. Generator Code</h3>
+<pre><code class="language-js">
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;fs&#x27;</span>
+<span class="hljs-keyword">import</span> glob <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;glob&#x27;</span>
+<span class="hljs-keyword">import</span> matter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;gray-matter&#x27;</span>
+<span class="hljs-keyword">import</span> mkdirp <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mkdirp&#x27;</span>
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path&#x27;</span>
+<span class="hljs-keyword">import</span> hljs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;highlight.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">MarkdownIt</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;markdown-it&#x27;</span>
+<span class="hljs-keyword">import</span> markdownItAnchor <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;markdown-it-anchor&#x27;</span>
+<span class="hljs-keyword">import</span> string <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;string&#x27;</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">slugify</span> = s =&gt; <span class="hljs-title function_">string</span>(s).<span class="hljs-title function_">slugify</span>().<span class="hljs-title function_">toString</span>()
+
+
+<span class="hljs-keyword">const</span> md = <span class="hljs-title class_">MarkdownIt</span>({
+    <span class="hljs-attr">html</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">linkify</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">typographer</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-title function_">highlight</span>(<span class="hljs-params">str, language</span>) {
+        <span class="hljs-keyword">if</span> (language &amp;&amp; hljs.<span class="hljs-title function_">getLanguage</span>(language)) {
+            <span class="hljs-keyword">try</span> {
+
+                <span class="hljs-keyword">return</span> hljs.<span class="hljs-title function_">highlight</span>(str, { <span class="hljs-attr">language</span>: language }).<span class="hljs-property">value</span>;
+            } <span class="hljs-keyword">catch</span> (err) {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+}).<span class="hljs-title function_">use</span>(markdownItAnchor, { slugify });
+
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">readFile</span> = (<span class="hljs-params">filename</span>) =&gt; {
+    <span class="hljs-keyword">const</span> rawFile = fs.<span class="hljs-title function_">readFileSync</span>(filename, <span class="hljs-string">&#x27;utf8&#x27;</span>)
+    <span class="hljs-keyword">const</span> parsed = <span class="hljs-title function_">matter</span>(rawFile)
+    <span class="hljs-keyword">const</span> html = md.<span class="hljs-title function_">render</span>(parsed.<span class="hljs-property">content</span>)
+
+    <span class="hljs-keyword">return</span> {...parsed, html }
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">templatize</span> = (<span class="hljs-params">template, { date, title, content, author }</span>) =&gt;
+    template
+    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;!-- PUBLISH_DATE --&gt;/g</span>, date)
+    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;!-- TITLE --&gt;/g</span>, title)
+    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;!-- CONTENT --&gt;/g</span>, content)
+    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;!-- AUTHOR --&gt;/g</span>, author)
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">saveFile</span> = (<span class="hljs-params">filename, contents</span>) =&gt; {
+    <span class="hljs-keyword">const</span> dir = path.<span class="hljs-title function_">dirname</span>(filename)
+    mkdirp.<span class="hljs-title function_">sync</span>(dir)
+    fs.<span class="hljs-title function_">writeFileSync</span>(filename, contents)
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">getOutputFilename</span> = (<span class="hljs-params">filename, outPath</span>) =&gt; {
+    <span class="hljs-keyword">const</span> basename = path.<span class="hljs-title function_">basename</span>(filename)
+    <span class="hljs-keyword">const</span> newfilename = basename.<span class="hljs-title function_">substring</span>(<span class="hljs-number">0</span>, basename.<span class="hljs-property">length</span> - <span class="hljs-number">3</span>) + <span class="hljs-string">&#x27;.html&#x27;</span>
+    <span class="hljs-keyword">const</span> outfile = path.<span class="hljs-title function_">join</span>(outPath, newfilename)
+    <span class="hljs-keyword">return</span> outfile
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">processFile</span> = (<span class="hljs-params">filename, template, outPath</span>) =&gt; {
+    <span class="hljs-keyword">const</span> file = <span class="hljs-title function_">readFile</span>(filename)
+    <span class="hljs-keyword">const</span> outfilename = <span class="hljs-title function_">getOutputFilename</span>(filename, outPath)
+
+    <span class="hljs-keyword">const</span> templatized = <span class="hljs-title function_">templatize</span>(template, {
+        <span class="hljs-attr">date</span>: file.<span class="hljs-property">data</span>.<span class="hljs-property">date</span>,
+        <span class="hljs-attr">title</span>: file.<span class="hljs-property">data</span>.<span class="hljs-property">title</span>,
+        <span class="hljs-attr">content</span>: file.<span class="hljs-property">html</span>,
+        <span class="hljs-attr">author</span>: file.<span class="hljs-property">data</span>.<span class="hljs-property">author</span>,
+    })
+
+    <span class="hljs-title function_">saveFile</span>(outfilename, templatized)
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`📝 <span class="hljs-subst">${outfilename}</span>`</span>)
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">main</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">const</span> srcPath = path.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;content&#x27;</span>)
+    <span class="hljs-keyword">const</span> outPath = path.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;public&#x27;</span>)
+    <span class="hljs-keyword">const</span> template = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;./templates/initial/template.html&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>)
+    <span class="hljs-keyword">const</span> filenames = glob.<span class="hljs-title function_">sync</span>(srcPath + <span class="hljs-string">&#x27;/**/*.md&#x27;</span>)
+
+    filenames.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">filename</span>) =&gt;</span> {
+        <span class="hljs-title function_">processFile</span>(filename, template, outPath)
+    })
+}
+
+<span class="hljs-title function_">main</span>()
+
+</code></pre>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

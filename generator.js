@@ -7,6 +7,7 @@ import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it'
 import markdownItAnchor from 'markdown-it-anchor'
 import string from 'string'
+import {mdToPdf} from 'md-to-pdf'
 
 const slugify = s => string(s).slugify().toString()
 
@@ -58,9 +59,17 @@ const getOutputFilename = (filename, outPath) => {
     return outfile
 }
 
-const processFile = (filename, template, outPath) => {
+const getOutputPdfname = (filename, outPath) => {
+    const basename = path.basename(filename)
+    const newfilename = basename.substring(0, basename.length - 3) + '.pdf'
+    const outfile = path.join(outPath, newfilename)
+    return outfile
+}
+
+const processFile = async (filename, template, outPath) => {
     const file = readFile(filename)
     const outfilename = getOutputFilename(filename, outPath)
+    const outpdfname = getOutputPdfname(filename, outPath)
 
     const templatized = templatize(template, {
         date: file.data.date,
@@ -68,9 +77,10 @@ const processFile = (filename, template, outPath) => {
         content: file.html,
         author: file.data.author,
     })
-
+    await mdToPdf({ path:filename }, { dest: outpdfname }) ;
     saveFile(outfilename, templatized)
     console.log(`📝 ${outfilename}`)
+    console.log(`📝 ${outpdfname}`)
 }
 
 const main = () => {

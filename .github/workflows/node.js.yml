@@ -16,7 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [ 16.x]
+
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -27,5 +28,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: npm i
+    - run: npm run generate
+    - run: git config user.name codebotx
+    - run: git config user.name anubhabr50@gmail.com 
+    - run: git add .
+    - run: git commit -m "Deploying update"
+    - run: git push origin squbix-resume
+

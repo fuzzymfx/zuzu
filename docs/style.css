@@ -1,6 +1,10 @@
 @media (prefers-color-scheme: dark) {
     .markdown-body {
         color-scheme: dark;
+        --hue-color: 243;
+        --scroll-bar-color: #0d1117;
+        --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+        --text-color-light: hsl(var(--hue-color), 8%, 65%);
         --color-prettylights-syntax-comment: #8b949e;
         --color-prettylights-syntax-constant: #79c0ff;
         --color-prettylights-syntax-entity: #d2a8ff;
@@ -49,6 +53,9 @@
 @media (prefers-color-scheme: light) {
     .markdown-body {
         color-scheme: light;
+        --hue-color: 243;
+        --scroll-bar-color: hsl(var(--hue-color), 12%, 100%);
+        --scroll-thumb-color: hsl(var(--hue-color), 12%, 90%);
         --color-prettylights-syntax-comment: #6e7781;
         --color-prettylights-syntax-constant: #0550ae;
         --color-prettylights-syntax-entity: #8250df;
@@ -92,6 +99,21 @@
         --color-attention-subtle: #fff8c5;
         --color-danger-fg: #cf222e;
     }
+}
+
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
 }
 
 .markdown-body {
@@ -1033,4 +1055,78 @@
 
 .markdown-body ::-webkit-calendar-picker-indicator {
     filter: invert(50%);
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        width: 58%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .main {
+        width: 75%;
+        margin: auto;
+    }
+}
+
+
+/* For Mobile Portrait View */
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .main {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* For Mobile Landscape View */
+
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .main {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* For Mobile Phones Portrait or Landscape View */
+
+@media screen and (max-device-width: 640px) {
+    .main {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* For iPhone 4 Portrait or Landscape View */
+
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .main {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* For iPhone 5 Portrait or Landscape View */
+
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .main {
+        width: 320px;
+        margin: auto;
+    }
+}
+
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .main {
+        width: 375px;
+        margin: auto;
+    }
 }
