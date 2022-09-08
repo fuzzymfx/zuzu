@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.x]
+
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -33,5 +34,5 @@ jobs:
     - run: git config user.name anubhabr50@gmail.com 
     - run: git add .
     - run: git commit -m "Deploying update"
-    # - run: git remote add origin https://codebotx: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@github.com/codebotx/squbix-resume-generator.git
     - run: git push origin squbix-resume
+
