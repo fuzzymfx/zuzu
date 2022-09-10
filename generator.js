@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
@@ -77,10 +78,10 @@ const processFile = async (filename, template, outPath) => {
         content: file.html,
         author: file.data.author,
     })
-    await mdToPdf({ path:filename }, { dest: outpdfname }) ;
+    // await mdToPdf({ path:filename }, { dest: outpdfname }) ;
     saveFile(outfilename, templatized)
     console.log(`📝 ${outfilename}`)
-    console.log(`📝 ${outpdfname}`)
+    // console.log(`📝 ${outpdfname}`)
 }
 
 const main = () => {
@@ -94,4 +95,4 @@ const main = () => {
     })
 }
 
-main()
+main();

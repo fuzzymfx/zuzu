@@ -1,5 +1,5 @@
 {
-    "name": "ssg",
+    "name": "zuzussg",
     "version": "1.0.0",
     "description": "static site generating using javascript and markdown files",
     "main": "generator.js",
@@ -17,6 +17,9 @@
     "scripts": {
         "devgenerate": "nodemon -e js,md,html --ignore dist/ ./generator.js",
         "generate": "node ./generator.js"
+    },
+    "bin": {
+        "zuzussg": "./generator.js"
     },
     "author": "Anubhab Patnaik",
     "license": "ISC"
