@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
@@ -8,7 +9,7 @@ import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it'
 import markdownItAnchor from 'markdown-it-anchor'
 import string from 'string'
-import {mdToPdf} from 'md-to-pdf'
+import { getOutputPdfname, generatePDF } from './pdf-generator.js'
 
 const slugify = s => string(s).slugify().toString()
 
@@ -60,39 +61,36 @@ const getOutputFilename = (filename, outPath) => {
     return outfile
 }
 
-const getOutputPdfname = (filename, outPath) => {
-    const basename = path.basename(filename)
-    const newfilename = basename.substring(0, basename.length - 3) + '.pdf'
-    const outfile = path.join(outPath, newfilename)
-    return outfile
-}
-
-const processFile = async (filename, template, outPath) => {
+const processFile = async(filename, template, outPath) => {
     const file = readFile(filename)
     const outfilename = getOutputFilename(filename, outPath)
     const outpdfname = getOutputPdfname(filename, outPath)
 
     const templatized = templatize(template, {
-        date: file.data.date,
-        title: file.data.title,
-        content: file.html,
-        author: file.data.author,
-    })
-    // await mdToPdf({ path:filename }, { dest: outpdfname }) ;
+            date: file.data.date,
+            title: file.data.title,
+            content: file.html,
+            author: file.data.author,
+        })
+        // await generatePDF(filename, outpdfname)
     saveFile(outfilename, templatized)
     console.log(`📝 ${outfilename}`)
-    // console.log(`📝 ${outpdfname}`)
+        // console.log(`📝 ${outpdfname}`)
+}
+const buildRssFeed = () => {
+    import ('./rss-generator.js')
 }
 
 const main = () => {
     const srcPath = path.resolve('content')
-    const outPath = path.resolve('public')
+    const outPath = path.resolve('docs')
     const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
 
     filenames.forEach((filename) => {
         processFile(filename, template, outPath)
     })
+    buildRssFeed()
 }
 
 main();

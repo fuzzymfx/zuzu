@@ -4,6 +4,7 @@
     "description": "static site generating using javascript and markdown files",
     "main": "generator.js",
     "dependencies": {
+        "cheerio": "^1.0.0-rc.12",
         "glob": "^7.1.6",
         "gray-matter": "^4.0.2",
         "highlight.js": "^11.5.1",
@@ -11,6 +12,7 @@
         "markdown-it-anchor": "^8.6.4",
         "md-to-pdf": "^5.1.0",
         "mkdirp": "^1.0.4",
+        "rss": "^1.2.2",
         "string": "^3.3.3"
     },
     "type": "module",
