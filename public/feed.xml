@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Example Feed]]></title>
+        <description><![CDATA[An example feed]]></description>
+        <link>https://example.com</link>
+        <image>
+            <url>https://example.com/apple-touch-icon.png</url>
+            <title>Example Feed</title>
+            <link>https://example.com</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 25 Feb 2023 18:18:24 GMT</lastBuildDate>
+        <atom:link href="https://example.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <managingEditor><![CDATA[John Doe]]></managingEditor>
+        <webMaster><![CDATA[John Doe]]></webMaster>
+        <item>
+            <title><![CDATA[Shitpost.IN]]></title>
+            <link>https://anubhavp.dev/blog/E:\zuzu\public\cheatsheet.html</link>
+            <guid isPermaLink="false">https://anubhavp.dev/blog/E:\zuzu\public\cheatsheet.html</guid>
+        </item>
+        <item>
+            <title><![CDATA[Shitpost.IN]]></title>
+            <link>https://anubhavp.dev/blog/E:\zuzu\public\zuzu.html</link>
+            <guid isPermaLink="false">https://anubhavp.dev/blog/E:\zuzu\public\zuzu.html</guid>
+        </item>
+    </channel>
+</rss>
