@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <style>
-        
+
     </style>
 </head>
 
@@ -62,26 +62,37 @@
             </div>
             <div>
                 <p class='auth'>Anubhab Patnaik</p>
-                <p class='auth'><p>Zuzu is a static site generator that takes in markdown files and render htmls pages. <a href="https://anubhavp.me/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.</p>
-<ul>
-<li><a href="#how-does-it-work">How Does it work</a>
-<ul>
-<li><a href="#1-create-a-markdown-file">Create a markdown file.</a></li>
-<li><a href="#2-run-the-generator-and-find-your-blog">Run the generator and find your blog.</a></li>
-</ul>
-</li>
-<li><a href="#the-static-site-generator">The Static Site Generator</a>
-<ul>
-<li><a href="#1-libraries-used">Libraries Used</a></li>
-<li><a href="#2-workflow">Workflow</a></li>
-<li><a href="#3-generator-code">Generator Code.</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="how-does-it-work" tabindex="-1">How does it work?</h2>
-<p>Zuzu parses the markdown file using <em>javascript</em> and renders it as <em>html documents</em>. It then saves the html files in the <code>public</code> folder. The public folder, with <code>index.html</code> file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on <a href="https://anubhavp.me/blog/">Github Pages</a>.</p>
-<h3 id="1-create-a-markdown-file" tabindex="-1">1. Create a markdown file</h3>
-<pre><code># This is a title
+                <p class='auth'>
+                <p>Zuzu is a static site generator that takes in markdown files and render htmls pages. <a
+                        href="https://anubhavp.dev/blog">This blog</a>, for example, has been written using this
+                    generator. This enables noobs like me to write blogs without
+                    having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is
+                    to write a markdown file and it will be rendered as a page ;) You can create a new page by creating
+                    a new markdown file.</p>
+                <ul>
+                    <li><a href="#how-does-it-work">How Does it work</a>
+                        <ul>
+                            <li><a href="#1-create-a-markdown-file">Create a markdown file.</a></li>
+                            <li><a href="#2-run-the-generator-and-find-your-blog">Run the generator and find your
+                                    blog.</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#the-static-site-generator">The Static Site Generator</a>
+                        <ul>
+                            <li><a href="#1-libraries-used">Libraries Used</a></li>
+                            <li><a href="#2-workflow">Workflow</a></li>
+                            <li><a href="#3-generator-code">Generator Code.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2 id="how-does-it-work" tabindex="-1">How does it work?</h2>
+                <p>Zuzu parses the markdown file using <em>javascript</em> and renders it as <em>html documents</em>. It
+                    then saves the html files in the <code>public</code> folder. The public folder, with
+                    <code>index.html</code> file, is the final output
+                    of the generator and this can be deployed and hosted in various platforms. This particular blog has
+                    been deployed on <a href="https://anubhavp.dev/blog/">Github Pages</a>.</p>
+                <h3 id="1-create-a-markdown-file" tabindex="-1">1. Create a markdown file</h3>
+                <pre><code># This is a title
 This is a paragraph
 This is another paragraph
 This is a list:
@@ -98,36 +109,43 @@ This is a table:
 | 1        | 2        | 3        |
 | 4        | 5        | 6        |
 | 7        | 8        | 9        |
-This is a link: [zuzu](https://anubhavp.me/blog/zuzu.html)
+This is a link: [zuzu](https://anubhavp.dev/blog/zuzu.html)
 </code></pre>
-<h3 id="2-run-the-generator-and-find-your-blog" tabindex="-1">2. Run the generator and find your blog</h3>
-<p>Run <code>npm run generate</code> in the console.
-You’ll now see the blog in the public folder! Run the index.html file in your browser to see your blog. You may now deploy your site
-to a server.</p>
-<h2 id="the-static-site-generator" tabindex="-1">The Static Site Generator</h2>
-<h3 id="1-libraries-used" tabindex="-1">1. Libraries used</h3>
-<ul>
-<li><a href="https://www.npmjs.com/package/markdown-it">MarkdownIt</a> <em>Markdown parser done right.</em></li>
-<li><a href="https://www.npmjs.com/package/markdown-it-anchor">MarkdownItAnchor</a> <em>Header anchors for markdown-it.</em></li>
-<li><a href="https://www.npmjs.com/package/glob">Glob</a> <em>“Globs” are the patterns you type when you do stuff like ls .js on the command line, or put build/ in a .gitignore file.</em></li>
-<li><a href="https://www.npmjs.com/package/gray-matter">Gray-Matter</a> <em>Parse front-matter from a string or file.</em></li>
-<li><a href="https://npmjs.com/package/mkdirp">Mkdirp</a> <em>Create Dirs if they do not exist.</em></li>
-</ul>
-<h3 id="2-workflow" tabindex="-1">2. Workflow</h3>
-<p>This is the code for the generator.js.
-The code works in the following way:</p>
-<ol>
-<li><code>fs.readfile() from fs</code> reads all the files from the said directory and stores then in <code>filename</code> using <code>glob</code>. It is a <code>glob</code> that matches all the files in the directory. The <code>file system</code> module allows you to work with the file system on your computer.</li>
-<li><code>gray-matter</code> helps extracting front matter from the a string or file.
-Converts a string with front-matter, like this:</li>
-</ol>
-<pre><code>    title: Hello
+                <h3 id="2-run-the-generator-and-find-your-blog" tabindex="-1">2. Run the generator and find your blog
+                </h3>
+                <p>Run <code>npm run generate</code> in the console. You’ll now see the blog in the public folder! Run
+                    the index.html file in your browser to see your blog. You may now deploy your site to a server.</p>
+                <h2 id="the-static-site-generator" tabindex="-1">The Static Site Generator</h2>
+                <h3 id="1-libraries-used" tabindex="-1">1. Libraries used</h3>
+                <ul>
+                    <li><a href="https://www.npmjs.com/package/markdown-it">MarkdownIt</a> <em>Markdown parser done
+                            right.</em></li>
+                    <li><a href="https://www.npmjs.com/package/markdown-it-anchor">MarkdownItAnchor</a> <em>Header
+                            anchors for markdown-it.</em></li>
+                    <li><a href="https://www.npmjs.com/package/glob">Glob</a> <em>“Globs” are the patterns you type when
+                            you do stuff like ls .js on the command line, or put build/ in a .gitignore file.</em></li>
+                    <li><a href="https://www.npmjs.com/package/gray-matter">Gray-Matter</a> <em>Parse front-matter from
+                            a string or file.</em></li>
+                    <li><a href="https://npmjs.com/package/mkdirp">Mkdirp</a> <em>Create Dirs if they do not exist.</em>
+                    </li>
+                </ul>
+                <h3 id="2-workflow" tabindex="-1">2. Workflow</h3>
+                <p>This is the code for the generator.js. The code works in the following way:</p>
+                <ol>
+                    <li><code>fs.readfile() from fs</code> reads all the files from the said directory and stores then
+                        in <code>filename</code> using <code>glob</code>. It is a <code>glob</code> that matches all the
+                        files in the directory. The <code>file system</code> module allows you to work with the file
+                        system on your computer.</li>
+                    <li><code>gray-matter</code> helps extracting front matter from the a string or file. Converts a
+                        string with front-matter, like this:</li>
+                </ol>
+                <pre><code>    title: Hello
     slug: home
     ---
     &lt;h1&gt;Hello world!&lt;/h1&gt;
 </code></pre>
-<p>Into an object like this:</p>
-<pre><code>{
+                <p>Into an object like this:</p>
+                <pre><code>{
 content: '&lt;h1&gt;Hello world!&lt;/h1&gt;',
 data: { 
     title: 'Hello', 
@@ -135,17 +153,29 @@ data: {
 }
 }
 </code></pre>
-<p>It then extracts the front matter and stores it in <code>data</code>. It then stores the content in <code>content</code> and returns the <code>filename</code> to the <code>main()</code> function. It then repeats the process for all the files in the directory.</p>
-<ol start="3">
-<li>
-<p>The <code>main()</code> function then takes in one <code>filename</code> at a time and then parses it through <code>markdownit( ,{markdownitanchor})</code>. <code>markdownit</code> parses the file and converts the markdown content into HTML files. It then creates a <code>html</code> file and writes the parsed content into it. It then saves the <code>html</code> file in the <code>public</code> folder. This process repeats for all the files in the directory.</p>
-</li>
-<li>
-<p>The converted html files are stored in the specified directories then using <code>mkdirp</code>. The <code>index.html</code> file isalready present in the <code>public</code> folder. <code>mkdirp</code> creates the directories if they do not exist.</p>
-</li>
-</ol>
-<h3 id="3-generator-code" tabindex="-1">3. Generator Code</h3>
-<pre><code class="language-js">
+                <p>It then extracts the front matter and stores it in <code>data</code>. It then stores the content in
+                    <code>content</code> and returns the <code>filename</code> to the <code>main()</code> function. It
+                    then repeats the process for all
+                    the files in the directory.</p>
+                <ol start="3">
+                    <li>
+                        <p>The <code>main()</code> function then takes in one <code>filename</code> at a time and then
+                            parses it through <code>markdownit( ,{markdownitanchor})</code>. <code>markdownit</code>
+                            parses the file and converts the markdown
+                            content into HTML files. It then creates a <code>html</code> file and writes the parsed
+                            content into it. It then saves the <code>html</code> file in the <code>public</code> folder.
+                            This process repeats for all the files
+                            in the directory.</p>
+                    </li>
+                    <li>
+                        <p>The converted html files are stored in the specified directories then using
+                            <code>mkdirp</code>. The <code>index.html</code> file isalready present in the
+                            <code>public</code> folder. <code>mkdirp</code> creates the directories
+                            if they do not exist.</p>
+                    </li>
+                </ol>
+                <h3 id="3-generator-code" tabindex="-1">3. Generator Code</h3>
+                <pre><code class="language-js">
 <span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;fs&#x27;</span>
 <span class="hljs-keyword">import</span> glob <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;glob&#x27;</span>
 <span class="hljs-keyword">import</span> matter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;gray-matter&#x27;</span>
@@ -235,42 +265,47 @@ data: {
 <span class="hljs-title function_">main</span>()
 
 </code></pre>
-</p>
+                </p>
             </div>
         </div>
         <div id='content'>
             <div class="foot">
                 <div id="links">
-    
+
                     <div class='icons'>
-    
-                        <a aria-label="GitHub" target="_blank" rel="noopener" id="github" href="http://github.com/codebotx " class="icon">
+
+                        <a aria-label="GitHub" target="_blank" rel="noopener" id="github"
+                            href="http://github.com/codebotx " class="icon">
                             <i class="bi bi-github"></i>
                         </a>
-    
-                        <a aria-label="Instagram" target="_blank" rel="noopener" id="instagram" href="http://instagram.com/anubhavclicks" class="icon">
+
+                        <a aria-label="Instagram" target="_blank" rel="noopener" id="instagram"
+                            href="http://instagram.com/anubhavclicks" class="icon">
                             <i class="bi bi-instagram "></i>
                         </a>
-    
-                        <a aria-label="Mail" target="_blank" rel="noopener" id="mail" href="mailto:anubhabr50@gmail.com " class="icon" >
+
+                        <a aria-label="Mail" target="_blank" rel="noopener" id="mail"
+                            href="mailto:anubhabr50@gmail.com " class="icon">
                             <i class="bi bi-envelope-open-fill "></i>
                         </a>
-    
-                        <a aria-label="Linkedin" target="_blank" rel="noopener" id="linkedin" href="https://www.linkedin.com/in/anubhabpatnaik0530/ " class="icon">
+
+                        <a aria-label="Linkedin" target="_blank" rel="noopener" id="linkedin"
+                            href="https://www.linkedin.com/in/anubhabpatnaik0530/ " class="icon">
                             <i class="bi bi-linkedin "></i>
                         </a>
-    
-                        <a aria-label="Blog" target="_blank" rel="noopener" id="personal-blog" href="https://anubhavp.dev/blog " class="icon">
+
+                        <a aria-label="Blog" target="_blank" rel="noopener" id="personal-blog"
+                            href="https://anubhavp.dev/blog " class="icon">
                             <i class="bi bi-card-text "></i>
                         </a>
-    
+
                     </div>
                 </div>
                 <div>
                     ©Anubhab Patnaik. Find me here.
                 </div>
             </div>
-    
+
         </div>
 
 

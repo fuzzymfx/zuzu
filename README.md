@@ -3,7 +3,7 @@
 ### Zuzu is a minimal static site generator.
 
 
-Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets. [This blog](https://anubhavp.me/blog), for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.  
+Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets. [This blog](https://anubhavp.dev/blog), for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.  
 
 - [How Does it work](#how-does-it-work)
   - [Create a markdown file.](#1-create-a-markdown-file)
@@ -14,7 +14,7 @@ Zuzu converts all your markdown files into static htmls pages to be rendered qui
 
 ## How does it work?
 
-Zuzu parses the markdown file using *javascript* and renders it as *html documents*. It then saves the html files in the `public` folder. The public folder, with `index.html` file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on [Github Pages](https://anubhavp.me/blog/).
+Zuzu parses the markdown file using *javascript* and renders it as *html documents*. It then saves the html files in the `public` folder. The public folder, with `index.html` file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on [Github Pages](https://anubhavp.dev/blog/).
 
 ### 1. Create a markdown file
 
@@ -35,7 +35,7 @@ Zuzu parses the markdown file using *javascript* and renders it as *html documen
     | 1        | 2        | 3        |
     | 4        | 5        | 6        |
     | 7        | 8        | 9        |
-    This is a link: [zuzu](https://anubhavp.me/blog/zuzu.html)
+    This is a link: [zuzu](https://anubhavp.dev/blog/zuzu.html)
 
 ### 2. Run the generator and find your blog
 
