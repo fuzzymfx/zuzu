@@ -4,6 +4,7 @@
         --hue-color: 243;
         --scroll-bar-color: #0d1117;
         --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+        --scroll-thumb-hover-color: hsl(var(--hue-color), 12%, 26%);
         --text-color-light: hsl(var(--hue-color), 8%, 65%);
         --color-prettylights-syntax-comment: #8b949e;
         --color-prettylights-syntax-constant: #79c0ff;
@@ -56,6 +57,7 @@
         --hue-color: 243;
         --scroll-bar-color: hsl(var(--hue-color), 12%, 100%);
         --scroll-thumb-color: hsl(var(--hue-color), 12%, 90%);
+        --scroll-thumb-hover-color: hsl(var(--hue-color), 12%, 80%);
         --color-prettylights-syntax-comment: #6e7781;
         --color-prettylights-syntax-constant: #0550ae;
         --color-prettylights-syntax-entity: #8250df;
@@ -113,7 +115,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-color-light);
+    background-color: var(--scroll-thumb-hover-color);
 }
 
 .markdown-body {
@@ -1055,6 +1057,64 @@
 
 .markdown-body ::-webkit-calendar-picker-indicator {
     filter: invert(50%);
+}
+
+.md {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.auth {
+    font-style: italic;
+}
+
+.dt {
+    font-size: 20px;
+}
+
+.nav {
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+.navanchor {
+    color: var(--color-fg-default) !important;
+}
+
+.foot {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1em;
+    bottom: 0;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.icon {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--color-fg-muted) !important;
+    transition: color 0.3s ease;
+}
+
+span+span {
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 1024px) {
