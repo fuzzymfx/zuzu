@@ -81,8 +81,21 @@ const buildRssFeed = () => {
     import ('./rss-generator.js')
 }
 
+const copystatic = (srcPath, outPath) => {
+    // Copy css files
+    const cssPath = path.join(srcPath, 'css')
+    const cssOutPath = path.resolve(outPath)
+    mkdirp.sync(cssOutPath)
+    fs.copyFileSync(path.join(cssPath, 'style.css'), path.join(cssOutPath, 'style.css'))
+    fs.copyFileSync(path.join(cssPath, 'hljs.css'), path.join(cssOutPath, 'hljs.css'))
+
+    console.log(`📝 ${path.join(cssOutPath, 'style.css')}`)
+    console.log(`📝 ${path.join(cssOutPath, 'hljs.css')}`)
+}
+
 const main = () => {
     const srcPath = path.resolve('content')
+    const staticPath = path.resolve('static')
     const outPath = path.resolve('docs')
     const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
@@ -91,6 +104,7 @@ const main = () => {
         processFile(filename, template, outPath)
     })
     buildRssFeed()
+    copystatic(staticPath, outPath)
 }
 
 main();
