@@ -80,8 +80,8 @@ const processFile = async(filename, template, outPath) => {
 const JSONify = (arr, filename, jsonpath) => {
     const file = readFile(filename)
     const outfilename = getOutputFilename(filename, '')
-    console.log(outfilename)
-    file.data.link = "https://anubhavp.dev/blog/" + outfilename
+        // console.log(outfilename)
+    file.data.link = jsonpath + outfilename
     file.data.content = file.html
     arr.push(file.data)
     var json = JSON.stringify(arr);
@@ -111,7 +111,7 @@ const copystatic = (srcPath, outPath) => {
         fs.copyFileSync(jsfilename, path.join(jsOutPath, jsoutFilename))
     })
 
-    fs.copyFileSync(path.join(srcPath, 'search.json'), path.join(jsonoutPath, 'search.json'))
+    fs.copyFileSync(path.join(srcPath, '/static/search.json'), path.join(jsonoutPath, 'search.json'))
 }
 
 const main = () => {

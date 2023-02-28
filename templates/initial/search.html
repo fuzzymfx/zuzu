@@ -15,7 +15,7 @@
     -->
     <link rel="manifest" href="./manifest.json" />
 
-    <title>Shitpost.IN</title>
+    <title>Shitpost.IN- Search</title>
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/hljs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -55,64 +55,98 @@
             <div class="head">
                 <form action="./search.html" method="get">
                     <h3>
-                        <input type="text" name="search" placeholder="Search" class="searchbox" />
+                        <input type="text" id="search" name="search" placeholder="Search" class="search-box"
+                            oninput="handleInput(event)" />
                     </h3>
                 </form>
-                <div>
-                    <p class='auth'>
-                    <ol class="searchresult">
-                        <!-- SEARCH_RESULTS -->
-                    </ol>
-                    </p>
-                </div>
-
             </div>
-            <div id='content'>
-                <div class="foot indexfoot">
-                    <div id="links">
-
-                        <div class='icons'>
-
-                            <a aria-label="GitHub" target="_blank" rel="noopener" id="github"
-                                href="http://github.com/codebotx " class="icon">
-                                <i class="bi bi-github"></i>
-                            </a>
-
-                            <a aria-label="Instagram" target="_blank" rel="noopener" id="instagram"
-                                href="http://instagram.com/anubhavclicks" class="icon">
-                                <i class="bi bi-instagram "></i>
-                            </a>
-
-                            <a aria-label="Mail" target="_blank" rel="noopener" id="mail"
-                                href="mailto:anubhabr50@gmail.com " class="icon">
-                                <i class="bi bi-envelope-open-fill "></i>
-                            </a>
-
-                            <a aria-label="Linkedin" target="_blank" rel="noopener" id="linkedin"
-                                href="https://www.linkedin.com/in/anubhabpatnaik0530/ " class="icon">
-                                <i class="bi bi-linkedin "></i>
-                            </a>
-
-                            <a aria-label="Blog" target="_blank" rel="noopener" id="personal-blog"
-                                href="https://anubhavp.dev/blog " class="icon">
-                                <i class="bi bi-card-text "></i>
-                            </a>
-
-                        </div>
-                    </div>
-                    <div>
-                        ©Anubhab Patnaik. Find me <a href="https://anubhavp.dev"> here </a>.
-                    </div>
-                </div>
-
-            </div>
-
+            <ul id="results"></ul>
 
 
         </div>
-    </div>
-    <script src="./static/js/search.js"></script>
+        <div id='content'>
+            <div class="foot indexfoot">
+                <div id="links">
 
+                    <div class='icons'>
+
+                        <a aria-label="GitHub" target="_blank" rel="noopener" id="github"
+                            href="http://github.com/codebotx " class="icon">
+                            <i class="bi bi-github"></i>
+                        </a>
+
+                        <a aria-label="Instagram" target="_blank" rel="noopener" id="instagram"
+                            href="http://instagram.com/anubhavclicks" class="icon">
+                            <i class="bi bi-instagram "></i>
+                        </a>
+
+                        <a aria-label="Mail" target="_blank" rel="noopener" id="mail"
+                            href="mailto:anubhabr50@gmail.com " class="icon">
+                            <i class="bi bi-envelope-open-fill "></i>
+                        </a>
+
+                        <a aria-label="Linkedin" target="_blank" rel="noopener" id="linkedin"
+                            href="https://www.linkedin.com/in/anubhabpatnaik0530/ " class="icon">
+                            <i class="bi bi-linkedin "></i>
+                        </a>
+
+                        <a aria-label="Blog" target="_blank" rel="noopener" id="personal-blog"
+                            href="https://anubhavp.dev/blog " class="icon">
+                            <i class="bi bi-card-text "></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div>
+                    ©Anubhab Patnaik. Find me <a href="https://anubhavp.dev"> here </a>.
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    </div>
+    <script>
+        // Define the searchdata function
+        async function searchdata(searchquery, json) {
+            var key = 0;
+            var results = [];
+
+            for (key in json) {
+                if (json[key]["content"].toLowerCase().includes(searchquery.toLowerCase())) {
+                    results.push([json[key]["title"], json[key]["link"]]);
+                }
+            }
+
+            return results;
+        }
+
+        // Handle the input event of the search input field
+        async function handleInput(event) {
+            const searchquery = event.target.value.trim();
+
+            // Load the search JSON file
+            const response = await fetch('./static/search.json');
+            const search = await response.json();
+
+            // Search the data
+            const results = await searchdata(searchquery, search);
+
+            // Display the results
+            const resultList = document.getElementById('results');
+            resultList.innerHTML = '';
+            results.forEach(result => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = result[1];
+                a.textContent = result[0];
+                li.appendChild(a);
+                resultList.appendChild(li);
+            });
+        }
+    </script>
 </body>
 
 </html>
