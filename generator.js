@@ -10,11 +10,13 @@ import MarkdownIt from 'markdown-it'
 import markdownItAnchor from 'markdown-it-anchor'
 import string from 'string'
 import { getOutputPdfname, generatePDF } from './pdf-generator.js'
+import toml from 'toml'
+const config = toml.parse(fs.readFileSync('./config.toml', 'utf-8'));
+// console.log(config)
 
 const slugify = s => string(s).slugify().toString()
 
-const absUrl = 'https://anubhavp.dev/zuzu/'
-
+const absUrl = config.base_url
 
 const md = MarkdownIt({
     html: true,
@@ -124,12 +126,12 @@ const copystatic = (srcPath, outPath) => {
 }
 
 const main = () => {
-    const srcPath = path.resolve('content')
-    const staticPath = path.resolve('templates/initial')
-    const outPath = path.resolve('docs')
-    const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
+    const srcPath = path.resolve(config.source_dir || 'content')
+    const staticPath = path.resolve(config.template_dir || 'templates/initial/')
+    const outPath = path.resolve(config.output_dir || 'docs')
+    const template = fs.readFileSync(config.templateHTML || './templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
-    const jsonPath = path.resolve('templates/initial/static')
+    const jsonPath = path.resolve(config.json_dir || 'templates/initial/static')
     const arr = []
 
     filenames.forEach((filename) => {

@@ -13,7 +13,8 @@
         "md-to-pdf": "^5.1.0",
         "mkdirp": "^1.0.4",
         "rss": "^1.2.2",
-        "string": "^3.3.3"
+        "string": "^3.3.3",
+        "toml": "^3.0.0"
     },
     "type": "module",
     "scripts": {

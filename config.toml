@@ -1,0 +1,21 @@
+# Homepage
+base_url = "https://anubhavp.dev/zuzu/"
+
+# Path to the directory containing the content
+source_dir = "content"
+
+# Path to the directory containing the output
+output_dir = "docs"
+
+# Path to the directory containing the templates
+template_dir = "templates/initial"
+
+# Path to the directory containing the static files
+static_dir = "static"
+
+# Theme
+templateHTML = "templates/initial/template.html"
+
+# Json
+json_dir = "templates/initial/static"
+
