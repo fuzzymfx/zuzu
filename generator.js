@@ -13,6 +13,8 @@ import { getOutputPdfname, generatePDF } from './pdf-generator.js'
 
 const slugify = s => string(s).slugify().toString()
 
+const absUrl = 'https://anubhavp.dev/zuzu/'
+
 
 const md = MarkdownIt({
     html: true,
@@ -81,7 +83,7 @@ const JSONify = (arr, filename, jsonpath) => {
     const file = readFile(filename)
     const outfilename = getOutputFilename(filename, '')
         // console.log(outfilename)
-    file.data.link = jsonpath + outfilename
+    file.data.link = absUrl + outfilename
     file.data.content = file.html
     arr.push(file.data)
     var json = JSON.stringify(arr);
@@ -120,16 +122,17 @@ const main = () => {
     const outPath = path.resolve('docs')
     const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
+    const jsonPath = path.resolve('templates/initial/static')
     const arr = []
 
     filenames.forEach((filename) => {
         processFile(filename, template, outPath)
-        JSONify(arr, filename, staticPath)
+        JSONify(arr, filename, jsonPath)
     })
-    buildRssFeed()
     copystatic(staticPath, outPath)
     fs.copyFileSync(path.join(staticPath, 'index.html'), path.join(outPath, 'index.html'))
     fs.copyFileSync(path.join(staticPath, 'search.html'), path.join(outPath, 'search.html'))
+    buildRssFeed()
 }
 
 main();
