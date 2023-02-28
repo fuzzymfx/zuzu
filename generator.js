@@ -112,6 +112,13 @@ const copystatic = (srcPath, outPath) => {
         const jsoutFilename = path.basename(jsfilename)
         fs.copyFileSync(jsfilename, path.join(jsOutPath, jsoutFilename))
     })
+    const htmlfileNames = glob.sync(srcPath + '/**/*.html')
+    htmlfileNames.forEach((htmlfilename) => {
+        if (!htmlfilename.includes('template.html')) {
+            const htmloutFilename = path.basename(htmlfilename)
+            fs.copyFileSync(htmlfilename, path.join(outPath, htmloutFilename))
+        }
+    })
 
     fs.copyFileSync(path.join(srcPath, '/static/search.json'), path.join(jsonoutPath, 'search.json'))
 }
@@ -130,8 +137,6 @@ const main = () => {
         JSONify(arr, filename, jsonPath)
     })
     copystatic(staticPath, outPath)
-    fs.copyFileSync(path.join(staticPath, 'index.html'), path.join(outPath, 'index.html'))
-    fs.copyFileSync(path.join(staticPath, 'search.html'), path.join(outPath, 'search.html'))
     buildRssFeed()
 }
 
