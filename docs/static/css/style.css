@@ -1093,6 +1093,25 @@
     font-size: 1em;
     bottom: 0;
 }
+.indexfoot{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-canvas-default);
+    color: var(--color-fg-muted);
+    text-align: center;
+    font-size: 1em;
+}
+
+.searchbox{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+
+}
 
 .icons {
     display: flex;

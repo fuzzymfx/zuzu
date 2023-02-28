@@ -77,20 +77,41 @@ const processFile = async(filename, template, outPath) => {
     console.log(`📝 ${outfilename}`)
         // console.log(`📝 ${outpdfname}`)
 }
+const JSONify = (arr, filename, jsonpath) => {
+    const file = readFile(filename)
+    const outfilename = getOutputFilename(filename, '')
+    console.log(outfilename)
+    file.data.link = "https://anubhavp.dev/blog/" + outfilename
+    file.data.content = file.html
+    arr.push(file.data)
+    var json = JSON.stringify(arr);
+    fs.writeFileSync(path.resolve(jsonpath, 'search.json'), json, 'utf8');
+
+}
 const buildRssFeed = () => {
     import ('./rss-generator.js')
 }
 
 const copystatic = (srcPath, outPath) => {
-    // Copy css files
-    const cssPath = path.join(srcPath, 'static/css')
+    mkdirp.sync(path.join(outPath, 'static/css'))
+    mkdirp.sync(path.join(outPath, 'static/js'))
+    const jsonoutPath = path.join(outPath, 'static/')
     const cssOutPath = path.join(outPath, 'static/css')
-    mkdirp.sync(cssOutPath)
-    fs.copyFileSync(path.join(cssPath, 'style.css'), path.join(cssOutPath, 'style.css'))
-    fs.copyFileSync(path.join(cssPath, 'hljs.css'), path.join(cssOutPath, 'hljs.css'))
+    const jsOutPath = path.join(outPath, 'static/js')
 
-    console.log(`📝 ${path.join(cssOutPath, 'style.css')}`)
-    console.log(`📝 ${path.join(cssOutPath, 'hljs.css')}`)
+    const cssfilenames = glob.sync(srcPath + '/**/*.css')
+    cssfilenames.forEach((cssfilename) => {
+        const cssoutfilename = path.basename(cssfilename)
+        fs.copyFileSync(cssfilename, path.join(cssOutPath, cssoutfilename))
+    })
+
+    const jsfilenames = glob.sync(srcPath + '/**/*.js')
+    jsfilenames.forEach((jsfilename) => {
+        const jsoutFilename = path.basename(jsfilename)
+        fs.copyFileSync(jsfilename, path.join(jsOutPath, jsoutFilename))
+    })
+
+    fs.copyFileSync(path.join(srcPath, 'search.json'), path.join(jsonoutPath, 'search.json'))
 }
 
 const main = () => {
@@ -99,12 +120,16 @@ const main = () => {
     const outPath = path.resolve('docs')
     const template = fs.readFileSync('./templates/initial/template.html', 'utf8')
     const filenames = glob.sync(srcPath + '/**/*.md')
+    const arr = []
 
     filenames.forEach((filename) => {
         processFile(filename, template, outPath)
+        JSONify(arr, filename, staticPath)
     })
     buildRssFeed()
     copystatic(staticPath, outPath)
+    fs.copyFileSync(path.join(staticPath, 'index.html'), path.join(outPath, 'index.html'))
+    fs.copyFileSync(path.join(staticPath, 'search.html'), path.join(outPath, 'search.html'))
 }
 
 main();
