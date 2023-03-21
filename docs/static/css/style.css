@@ -1227,3 +1227,7 @@ span+span {
         margin: auto;
     }
 }
+.body, html{
+    max-width: 54rem;
+    margin: 0 auto;
+}
