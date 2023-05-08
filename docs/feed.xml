@@ -4,7 +4,7 @@
         <description><![CDATA[Anubhav's Blog]]></description>
         <link>https://anubhavp.dev/blog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 08 May 2023 10:01:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 May 2023 10:09:19 GMT</lastBuildDate>
         <atom:link href="https://anubhavp.dev/blog/feed.xml" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Anubhab Patnaik]]></author>
         <atom:link href="https://anubhavp.dev/blog/feed.xml" rel="self" type="application/rss+xml"/>
@@ -36,7 +36,7 @@
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;h3 style=&quot;font-size: 48px; padding-left: 10px;&quot;&gt;
+            &lt;h3 style=&quot;font-size: 48px; padding-left: 5px;&quot;&gt;
                 SHITPOST.IN
             &lt;/h3&gt;
         &lt;/div&gt;
@@ -358,7 +358,7 @@ Third paragraph of definition 2.
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;h3 style=&quot;font-size: 48px; padding-left: 10px;&quot;&gt;
+            &lt;h3 style=&quot;font-size: 48px; padding-left: 5px;&quot;&gt;
                 SHITPOST.IN
             &lt;/h3&gt;
         &lt;/div&gt;

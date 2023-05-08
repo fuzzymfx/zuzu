@@ -1077,10 +1077,10 @@
 .nav {
     margin-top: 10px;
     font-size: 20px;
-    /* margin-left: 10px; */
+    margin-left: 10px;
     padding: 10px;
     padding-right: 20px;
-    /* margin-right: 10px; */
+    margin-right: 10px;
 }
 
 .navanchor {
@@ -1227,9 +1227,7 @@ span+span {
         margin: auto;
     }
 }
-
-.body,
-html {
+.body, html{
     max-width: 54rem;
     margin: 0 auto;
 }
