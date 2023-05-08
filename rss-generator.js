@@ -6,7 +6,6 @@ import rss from 'rss';
 // Set up RSS feed
 const feed = new rss({
     title: 'Anubhav\'s Blog',
-    description: 'Anubhav\'s Blog',
     feed_url: 'https://anubhavp.dev/blog/feed.xml',
     site_url: 'https://anubhavp.dev/blog',
     guid: 'https://anubhavp.dev/blog',
@@ -30,7 +29,11 @@ fs.readdir(directoryPath, function(err, files) {
     files.forEach(function (file) {
 
         const filePath = path.join(directoryPath, file);
-        if ((path.extname(filePath) === '.html') && !(months.some(el => filePath.includes(el)))) {
+        if (path.extname(filePath) === '.html'
+        && file !== 'index.html'
+        && file !== 'search.html'
+
+        )  {
             const url = `https://anubhavp.dev/blog/${file}`;
             const html = fs.readFileSync(filePath, 'utf-8');
             
@@ -43,7 +46,6 @@ fs.readdir(directoryPath, function(err, files) {
 
             const item = {
                 title,
-                description,
                 url,
                 date,
                 author,
