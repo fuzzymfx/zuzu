@@ -1,6 +1,9 @@
 # Homepage
 base_url = "https://anubhavp.dev/zuzu/"
 
+# template
+template = "initial"
+
 # Path to the directory containing the content
 source_dir = "content"
 
@@ -19,3 +22,14 @@ templateHTML = "templates/initial/template.html"
 # Json
 json_dir = "templates/initial/static"
 
+# search
+search = false
+
+# title of blog
+title = "Zuzu"
+
+# author
+author = "Anubhab Patnaik"
+
+# description
+description = "A space for my two cents, musings, and insights."
