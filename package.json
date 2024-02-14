@@ -18,7 +18,7 @@
     },
     "type": "module",
     "scripts": {
-        "dev": "npx nodemon -e js,md,css --ignore dist/ ./generator.js && npx nodemon -e js,md --ignore dist/ ./rss-generator.js",
+        "dev": "npx nodemon -e js,md,css --ignore docs/ ./generator.js && npx nodemon -e js,md --ignore docs/ ./rss-generator.js",
         "generate": "node ./generator.js && node ./rss-generator.js"
     },
     "bin": {

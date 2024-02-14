@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="Random shitpost on my daily drivers, chill outs & research thingys."
+    />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta name="description" content="Zuzu: A Static Site Generator" />
+    <meta name="publish-date" content="" />
+    <meta name="author" content="" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <title>Shitpost.IN</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="./static/css/hljs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <style></style>
+  </head>
+
+  <body class="markdown-body">
+    <div class="main">
+      <div class="container nav">
+        <div class="row flex">
+          <div class="col-md-12">
+            <div>
+              <span>
+                <a href="./index.html" title="home" class="index">
+                  <img
+                    src="./static/img/android-chrome-192x192.png"
+                    alt="logo"
+                    class="mr1 index-logo pt-3"
+                  />
+                </a>
+              </span>
+              <span>
+                <a class="navanchor" href="./current.html">current</a>
+              </span>
+              <span>
+                <a class="navanchor" href="./blogs.html">blog</a>
+              </span>
+              <span>
+                <a class="navanchor" href="./about.html">about</a>
+              </span>
+            </div>
+          </div>
+          <div>
+            <a href="/feed.xml" title="anubhab" class="rss gray link">/rss</a>
+          </div>
+        </div>
+      </div>
+      <div class="md">
+        <div class="head">
+          <h1>
+            Current shenanigans
+          </h1>
+          <p class="dt">
+            
+          </p>
+        </div>
+        <div>
+          <p class="auth"></p>
+          <p class="auth"><style>
+ .image{
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ flex-direction: column;
+ }
+</style>
+<h5 id="current-2024" tabindex="-1">Current, 2024</h5>
+<p><a href="/reading.html">Here’s what I am reading and writing these days</a></p>
+<p>Happy New Year, muchachos! I hope you had a good one. I just returned to Bangalore after a much-needed break in my hometown. Leaving home and returning to the city was a bit of a bummer, but such is life! The dreaded omicron variant is wreaking havoc in the city. I am starting a new career at RadiusAI as a Software Engineer, and I am pretty stoked :D</p>
+<p>At Radius AI I am involved in building an async uptime monitoring service using Rust, and also a concurrent heartbeat service in Python. I will update this page with more details soon.</p>
+<p>Here’s an improved version of Llama Index’s sub-querying engine used to generate SQL from Natural Language: <a href="/blog/neak.html">Neak</a>.</p>
+<p>Coming onto Dough: a rich, modular, and customisable content generator, crafted in Rust, <a href="https://anubhavp.dev/blog/dough.html">here’s everything</a> you need to know.
+This is a breakdown of the tasks I was working on:</p>
+<p>v2:</p>
+<ul>
+<li>Improving the rendering engine:
+<ul>
+<li><s>Add a refresh feature while rendering slides</s>
+<ul>
+<li>Hot Module Reload( FIX )</li>
+</ul>
+</li>
+<li><s>Add support for rendering <strong>nested syntax</strong></s></li>
+<li>Add support for the maximum width and height of the terminal. Write a word wrapper.</li>
+<li><s>Address the color storage issue for multiline elements, ensuring ANSI escape sequences are properly stripped: Refine color correction post-alignment</s></li>
+<li>Enhance rendering for complex markdown elements like links within headings or lists.
+<ul>
+<li><s>lists.</s></li>
+<li>blockquotes.</li>
+</ul>
+</li>
+<li>Provide comprehensive support for common Markdown elements.
+<ul>
+<li><s>Improve the rendering of thematic breaks</s></li>
+</ul>
+</li>
+<li><s>Improve the design language.</s></li>
+<li>Image support for terminals with image capabilities is pending. <em>(Kitty, iTerm2, etc.)</em></li>
+</ul>
+</li>
+<li><s>Syntax Highlighting in code blocks</s>
+<ul>
+<li><s>Improve the performance of syntax highlighting. The current implementation is CPU intensive. Use a different library for syntax highlighting, or parallel threads to improve performance.</s></li>
+</ul>
+</li>
+<li><s>Custom text alignment: A regex match for individual text alignment</s>
+<ul>
+<li><s>Improve the alignment of segments of text.</s></li>
+</ul>
+</li>
+<li><s>Implement running code blocks on separate threads and displaying results in the current console.</s></li>
+</ul>
+<p>I am done with most of what I had planned for Dough. Check out the entire <a href="https://github.com/fuzzymfx/dough/blob/main/README.md#contributing">TODO list here</a>. I want peers to contribute to the pending issues making this a more robust open-source project.</p>
+<p><strong>Feb</strong></p>
+<p>On a personal trajectory, <a href="https://injuly.in">Srijan</a> and I have identified a pain point in the developer/ consumer tooling space. We are working on a solution to solve it. We are still in the early stages of the product, and I will be sharing more details soon. The codename for the project is <em>‘Hoid’</em>. Hoid has a lot of moving parts. I am focused on the market research now. I believe that tech has become a commodity. There isn’t anything that you cannot build using tech anymore. Money is in solving the right set of problems.</p>
+<p>To give a sneak into Hoid, here are some of the things that I am working on:</p>
+<ul>
+<li>content recommendation engine</li>
+<li>search engine using vectors</li>
+<li>content aggregation</li>
+<li>bookmarks, and TL;DR</li>
+</ul>
+<p>Meanwhile, I am exploring esoteric programming languages and also planning to build a distributed file system in Rust.</p>
+<p>I stumbled upon <a href="https://substack.com/">Substack</a>, a platform for independent writers. I will be writing on substack as well. This <strong>does not change</strong> the fact that this will still be my primary blog.</p>
+<div id="substack-feed-embed"></div>
+<script>
+  window.SubstackFeedWidget = {
+    substackUrl: "fuzzymf.substack.com",
+    posts: 3,
+    hidden: ["image"]
+  };
+</script>
+<script src="https://substackapi.com/embeds/feed.js" async></script>
+<p>Feel free to check out whatever <a href="https://fuzzymf.substack.com">else I have written</a> and <a href="https://fuzzymf.substack.com/subscribe">subscribe to my newsletter</a> to get notifications about new posts.</p>
+<hr>
+<p><a href="/blog/23.html">The past year</a></p>
+</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
