@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="icon" href="./favicon.ico" />
-    <meta
-      name="description"
-      content="Random shitpost on my daily drivers, chill outs & research thingys."
-    />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-    <meta name="description" content="Zuzu: A Static Site Generator" />
-    <meta name="publish-date" content="May 29, 2022" />
-    <meta name="author" content="Anubhab Patnaik" />
-    <link rel="manifest" href="./manifest.json" />
-
-    <title>Shitpost.IN</title>
-    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="./static/css/hljs.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       crossorigin="anonymous"
     />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="Anubhab Patnaik" />
 
-    <style></style>
+    <title>zuzu: A Static Site Generator (SSG)</title>
   </head>
 
   <body class="markdown-body">
-    <div class="main">
-      <div class="container nav">
-        <div class="row flex">
-          <div class="col-md-12">
-            <div>
-              <span>
-                <a href="./index.html" title="home" class="index">
-                  <img
-                    src="./static/img/android-chrome-192x192.png"
-                    alt="logo"
-                    class="mr1 index-logo pt-3"
-                  />
-                </a>
-              </span>
-              <span>
-                <a class="navanchor" href="./current.html">current</a>
-              </span>
-              <span>
-                <a class="navanchor" href="./blogs.html">blog</a>
-              </span>
-              <span>
-                <a class="navanchor" href="./about.html">about</a>
-              </span>
-            </div>
+    <div class="f6">
+      <header id="header" class="center mt6 mb4">
+        <nav>
+          <div class="mb2 dib">
+            <a href="/" title="home" class="index">
+              <img
+                src="./static/img/android-chrome-192x192.png"
+                alt="logo"
+                class="mr1 index-logo"
+              />
+            </a>
+            <a
+              href="/current.html"
+              title=" What's up?
+            "
+              class="gray link"
+              >/current</a
+            >
+
+            <a
+              href="/blog.html"
+              title=" Some weird shit that I have written"
+              class="gray link"
+              >/blog</a
+            >
+
+            <a
+              href="/about.html"
+              title=" More
+            "
+              class="gray link"
+              >/about</a
+            >
           </div>
           <div>
-            <a href="/feed.xml" title="anubhab" class="rss gray link">/rss</a>
+            <a href="/blog/feed.xml" title="anubhab" class="rss gray link"
+              >/rss</a
+            >
           </div>
-        </div>
-      </div>
-      <div class="md">
-        <div class="head">
-          <h1>
-            zuzu: A Static Site Generator (SSG)
-          </h1>
-          <p class="dt">
-            May 29, 2022
-          </p>
-        </div>
-        <div>
-          <p class="auth">Anubhab Patnaik</p>
-          <p class="auth"><p>Zuzu is a static site generator that takes in markdown files and render htmls pages. <a href="https://anubhavp.dev/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.</p>
+        </nav>
+      </header>
+      <section id="main" class="page-post gray mb6 lh-copy">
+        <main>
+          <div class="content custom">
+            <p>Zuzu is a static site generator that takes in markdown files and render htmls pages. <a href="https://anubhavp.dev/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.</p>
 <ul>
 <li><a href="#how-does-it-work">How Does it work</a>
 <ul>
@@ -243,9 +240,11 @@ data: {
 <span class="hljs-title function_">main</span>()
 
 </code></pre>
-</p>
-        </div>
-      </div>
+
+          </div>
+        </main>
+      </section>
     </div>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

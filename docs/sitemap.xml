@@ -1,0 +1,84 @@
+<?xml version="1.0";encoding="utf-8" standalone="yes"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog/about.html</loc>
+                  <lastmod>2024-08-27T22:16:20.843Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog/blog.html</loc>
+                  <lastmod>2024-08-27T22:16:20.845Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog/cheatsheet.html</loc>
+                  <lastmod>2024-08-27T22:16:20.862Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog/current.html</loc>
+                  <lastmod>2024-08-27T22:16:20.864Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog/zuzu.html</loc>
+                  <lastmod>2024-08-27T22:16:20.871Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//about.html</loc>
+                  <lastmod>2024-08-27T22:16:20.843Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//blog.html</loc>
+                  <lastmod>2024-08-27T22:16:20.845Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//cheatsheet.html</loc>
+                  <lastmod>2024-08-27T22:16:20.862Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//current.html</loc>
+                  <lastmod>2024-08-27T22:16:20.864Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+
+              <url>
+                  <loc>https://anubhavp.dev/zuzu//zuzu.html</loc>
+                  <lastmod>2024-08-27T22:16:20.871Z</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>0.5</priority>
+              </url>
+          
+    </urlset>
